@@ -3,7 +3,7 @@
 
 Hello {{ user_from | replace('_', '\_') }}! Here's your account info.
 
-coin|deposit address|balance
+Coin|Deposit Address|Balance
 :---|:---|---:
 {% for i in info %}
 {%   set name_fmt = "%s (%s)" % (ctb.conf.coins[i.coin].name, i.coin.upper()) %}
