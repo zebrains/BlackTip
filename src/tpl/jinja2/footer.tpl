@@ -7,9 +7,9 @@
 {% set compose_url = "http://www.reddit.com/message/compose?to=%s&subject=%s&message=%%2B%s" %}
 {% set i_url = compose_url % (user_bot, "info", "info") %}
 {% set h_url = compose_url % (user_bot, "history", "history") %}
-{% set w_url = compose_url % (user_bot, "withdraw", "withdraw%20ADDRESS%20AMOUNT%20COIN_NAME") %}
+{% set w_url = compose_url % (user_bot, "withdraw", "withdraw%20ADDRESS%20AMOUNT%20BC") %}
 {% set r_url = compose_url % (user_bot, "rates", "rates") %}
-{% set k_url = compose_url % (user_bot, "redeem", "redeem%20COIN_NAME") %}
+{% set k_url = compose_url % (user_bot, "redeem", "redeem%20BC") %}
 {% if ctb and ctb.conf.reddit.help.enabled %}
 {%   set help_link = " ^[[help]](%s)" % ctb.conf.reddit.help.url %}
 {% endif %}
