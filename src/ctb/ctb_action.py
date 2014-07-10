@@ -199,18 +199,20 @@ class CtbAction(object):
 
         lg.debug("< CtbAction::__init__(atype=%s, from_user=%s) DONE", self.type, self.u_from.name)
 
+    ########################################################
+    #Return string representation of self
+    ########################################################
     def __str__(self):
-        """""
-        Return string representation of self
-        """
+
         me = "<CtbAction: type=%s, msg.body=%s, from_user=%s, to_user=%s, to_addr=%s, coin=%s, fiat=%s, coin_val=%s, fiat_val=%s, subreddit=%s>"
         me = me % (self.type, self.msg.body if self.msg else '', self.u_from, self.u_to, self.addr_to, self.coin, self.fiat, self.coinval, self.fiatval, self.subreddit)
         return me
 
+    ########################################################
+    #Update action state in database
+    ########################################################
     def update(self, state=None):
-        """
-        Update action state in database
-        """
+
         lg.debug("> CtbAction::update(%s)", state)
 
         if not state:
@@ -232,10 +234,11 @@ class CtbAction(object):
         lg.debug("< CtbAction::update() DONE")
         return True
 
+    ########################################################
+    #Save action to database
+    ########################################################
     def save(self, state=None):
-        """
-        Save action to database
-        """
+
         lg.debug("> CtbAction::save(%s)", state)
 
         # Make sure no negative values exist
@@ -287,6 +290,9 @@ class CtbAction(object):
         lg.debug("< CtbAction::save() DONE")
         return True
 
+########################################################
+
+########################################################
     def do(self):
         """
         Call appropriate function depending on action type
